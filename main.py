@@ -3,8 +3,8 @@ from utils.config_utils import setup_seed
 
 is_sbatch = 1
 if is_sbatch:
-    data_pth = r'/share/home/xxx/time_series_data/dc_detector/'
-    logs_pth = r'/share/home/xxx/TF_AD_models_logs/logs/'
+    data_pth = r'/share/home/202220143416/time_series_data/dc_detector/'
+    logs_pth = r'/share/home/202220143416/TF_AD_models_logs/logs/'
 else:
     data_pth = r'/home/zzj/time_series_data2/DCdetector_dataset/'
     logs_pth = r'/home/zzj/TF_AD_models_logs/logs/'

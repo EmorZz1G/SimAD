@@ -15,14 +15,13 @@ def my_best_f1(score, label):
     best_thre = 0
     # score = minmax_scale(score)
     # for q in np.arange(0.001, 0.501, 0.001):
-    # for q in np.arange(0.01, 0.901, 0.01):
-    for q in np.arange(0.38, 0.441, 0.01):
+    for q in np.arange(0.01, 0.901, 0.01):
         thre = np.quantile(score, 1-q)
         pred = score > thre
         pred = pred.astype(int)
         label = label.astype(int)
         p,r,f1,_ = precision_recall_fscore_support(label, pred, average='binary')
-        print(f'q: {q}, p: {p}, r: {r}, f1: {f1}')
+        # print(f'q: {q}, p: {p}, r: {r}, f1: {f1}')
 
         if f1 > best_f1[2]:
             best_f1 = (p, r, f1)
