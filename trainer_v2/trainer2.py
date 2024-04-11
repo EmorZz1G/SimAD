@@ -108,15 +108,11 @@ class ContAD_Trainer(Trainer):
         device = self.device
         st = time.time()
 
-        warmup_steps = 20
-        lr_func = lambda step: min(
-            (step + 1) / (warmup_steps + 1e-8),
-            0.5 * (math.cos(step / self.config.epochs * math.pi) + 1),
-        )
-        # scheduler = torch.optim.lr_scheduler.LambdaLR(
-        #     opti, lr_lambda=lr_func, verbose=True
+        # lr_func = lambda step: min(
+        #     (step + 1) / (warmup_steps + 1e-8),
+        #     0.5 * (math.cos(step / self.config.epochs * math.pi) + 1),
         # )
-        # scheduler = torch.optim.lr_scheduler.CyclicLR(opti, base_lr=self.config.lr*0.01, max_lr=self.config.lr*0.1, step_size_up=100, cycle_momentum=False, verbose=False)
+
         max_iters = 150000
         scheduler = CosineLRScheduler(opti,
                                   t_initial=max_iters,
@@ -301,8 +297,6 @@ class ContAD_Trainer(Trainer):
         dataloader = self.test_loader
         device = self.device
 
-        l2_loss = nn.MSELoss()
-        cos_loss = nn.CosineSimilarity(dim=-1)
 
         labels = []
         scores = []
@@ -327,10 +321,6 @@ class ContAD_Trainer(Trainer):
         scores = np.concatenate(scores, axis=0)
 
 
-        
-        
-        # p,r,f1 = fk_f1_score(labels, pred, 0.3, modify=False)
-        # print(f'p: {p}, r: {r}, f1: {f1}')
         p,r,f1,shr = my_best_f1(scores, labels)
         print(f'sh {shr} p: {p}, r: {r}, f1: {f1}')
 
@@ -339,7 +329,6 @@ class ContAD_Trainer(Trainer):
         pred = pred.astype(int)
 
         if from_file:
-            # metrics = combine_all_evaluation_scores(pred,labels,scores,full=True)
             metrics = combine_all_evaluation_scores_with_bias(pred,labels,scores,full=True,data_name=self.config.data_name)
 
             print('====================Test Full====================')
@@ -387,6 +376,7 @@ class ContAD_Trainer(Trainer):
             print(f'{i+1}: {self.topf1[i]}')
 
 
+        metric_score = np.sum(score)
         if self.config.resume==0:
             self.mylogger.add_iter_value({
                 'epoch': self.cur_epoch,
@@ -396,6 +386,7 @@ class ContAD_Trainer(Trainer):
                 'rec':r,
                 # 'quantile':shr,
                 'thres':shr,
-            }, train=0, metric='f1')
+                'metric_score':metric_score
+            }, train=0, metric='metric_score', max_=0)
 
         
