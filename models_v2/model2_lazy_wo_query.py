@@ -1,14 +1,6 @@
 import torch
 import torch.nn as nn
 import math
-"""
-启发，加入查询嵌入是否有效果02.03、11：25.原本在PSM最多为0.518
-还真是！我超了，现在350IT，F1 0.554，后面还是降到了0.545，这个是让V作为MEM
-然后试了一下，把K作为MEM，350IT=F1 0.519，最多0.522，然后下降到0.515
-第二次，同样V做MEM，350IT，F1 0.56，后面下降到0.54
-第三次，其他不变，复原PATCH2，不降噪，似乎350IT，F1 0.556，后面下降到0.545
-
-"""
 
 
 class PositionalEmbedding(nn.Module):
