@@ -377,6 +377,7 @@ class ContAD_Trainer(Trainer):
 
 
         metric_score = np.sum(scores)
+        print('metric_score', metric_score)
         if self.config.resume==0:
             self.mylogger.add_iter_value({
                 'epoch': self.cur_epoch,
