@@ -352,11 +352,8 @@ class ContAD_wo_ci(nn.Module):
 
 
         self.projection2 = nn.Sequential(nn.Linear(d_model,d_model),
-                                        # nn.LayerNorm(d_model),
                                         nn.ReLU(),
                                         nn.Linear(d_model, patch_size*proj_dim))
-                                        # ,
-                                        # Rearrange('b n (p c) -> b (n p) c',c=proj_dim))
 
         self.classifer = nn.Sequential(nn.Linear(d_model,d_model),nn.ReLU(),nn.Linear(d_model, patch_size),Rearrange('b n p -> b (n p)'))
         
@@ -364,14 +361,10 @@ class ContAD_wo_ci(nn.Module):
         self.c_dim = c_dim
 
     def forward(self, x):
-        # print(x.shape)
         x = self.embedding(x)
-        # x = self.tcn(x)
         x = self.to_patch_embedding(x)
         x = self.encoder(x)
 
-        # if self.training:
-        #     x = x + torch.randn_like(x) * 1.
         x_out = self.projection(x)
         sim_score = self.projection2(x)
         # BC, N, P
