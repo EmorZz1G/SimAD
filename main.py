@@ -45,7 +45,7 @@ def get_arg_parser():
     parser.add_argument('--momentum', type=float, default=0.9, help='Momentum for optimizer')
     # 打印频率
     parser.add_argument('--print_freq', type=int, default=50, help='Print frequency')
-    parser.add_argument('--test_freq', type=int, default=50, help='Test frequency')
+    parser.add_argument('--test_freq', type=int, default=1000, help='Test frequency')
     # AMP混合精度
     parser.add_argument('--use_amp', type=int, default=0, help='Use AMP')
     # 多进程
@@ -101,8 +101,8 @@ def get_arg_parser():
     parser.add_argument('--noise_level', type=float, default=0.1)
 
     # warmup_steps
-    parser.add_argument('--warmup_steps', type=int, default=2000)
-    parser.add_argument('--warmup_max_ratio', type=float, default=0.5)
+    parser.add_argument('--warmup_steps', type=int, default=20000)
+    parser.add_argument('--warmup_max_ratio', type=float, default=0.2)
 
     return parser
 
