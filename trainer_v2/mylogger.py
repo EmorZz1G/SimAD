@@ -75,7 +75,7 @@ class MyLogger:
             if train == 0 and k == metric:
                 if v >= max(data[k]) and max_:
                     torch.save(self.model, os.path.join(self.save_pth, 'best_checkout.pth'))
-                elif v <= min(data[k]) and max_:
+                elif v <= min(data[k]) and max_ == 0:
                     torch.save(self.model, os.path.join(self.save_pth, 'best_checkout.pth'))
 
 
