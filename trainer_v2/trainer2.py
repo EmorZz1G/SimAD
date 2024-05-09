@@ -300,6 +300,7 @@ class ContAD_Trainer(Trainer):
 
         labels = []
         scores = []
+        st = time.time()
         for x, y in dataloader:
             x = x.to(device)
             y = y.to(device)
@@ -316,7 +317,7 @@ class ContAD_Trainer(Trainer):
             labels.append(y.view(-1).cpu())
             scores.append(score.view(-1).cpu())
 
-
+        print('Test time cost: {:.4f}'.format(time.time()-st))
         labels = np.concatenate(labels ,axis=0)
         scores = np.concatenate(scores, axis=0)
 
