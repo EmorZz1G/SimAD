@@ -8,4 +8,4 @@ Model link:
 
 https://drive.google.com/drive/folders/1dDH3JRivRYEU02riHzGFUu74OxiwDax6?usp=sharing [^1]
 
-[^1]: The model trained on MSL dataset is too large. We will upload it in the future.
+[^1]: The model trained on MSL dataset is too large. We are willing to upload it in the future.
