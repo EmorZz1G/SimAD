@@ -1,7 +1,9 @@
 # SimAD
 This is the implementation of *SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection*
 
-The paper is under review.
+The paper is under review. You can download the paper from [arivx](https://arxiv.org/abs/2405.11238).
+
+
 
 # Abstract
 Despite the prevalence of reconstruction-based deep learning methods, time series anomaly detection remains a challenging task. Existing approaches often struggle with limited temporal contexts, inadequate representation of normal patterns, and flawed evaluation metrics, hindering their effectiveness in identifying aberrant behavior.
@@ -25,3 +27,15 @@ https://drive.google.com/drive/folders/1dDH3JRivRYEU02riHzGFUu74OxiwDax6?usp=sha
 
 [^1]: The model trained on MSL dataset is too large. We are willing to upload it in the future.
 
+## Citation
+
+**If you find this repo useful, please cite our paper.**
+
+@misc{zhong2024simad,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title={SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection}, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;author={anonymous authors}, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;eprint={2405.11238},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archivePrefix={arXiv},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;primaryClass={cs.LG}<br>
+}
