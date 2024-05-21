@@ -29,7 +29,7 @@ https://drive.google.com/drive/folders/1dDH3JRivRYEU02riHzGFUu74OxiwDax6?usp=sha
 
 ## Citation
 
-**If you find this repo useful, please cite our paper.**
+**If you find this repo useful, please cite our paper or leave a star.**
 
 @misc{zhong2024simad,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;title={SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection}, <br>
