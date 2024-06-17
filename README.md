@@ -1,7 +1,7 @@
 # SimAD
 This is the implementation of *SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection*
 
-The paper is under review. You can download the paper from [arivx](https://arxiv.org/abs/2405.11238).
+The paper is under review. You can download the paper from [arXiv](https://arxiv.org/abs/2405.11238).
 
 
 
@@ -26,6 +26,11 @@ Code and pre-trained models are available at [https://github.com/EmorZz1G/SimAD]
 https://drive.google.com/drive/folders/1dDH3JRivRYEU02riHzGFUu74OxiwDax6?usp=sharing [^1]
 
 [^1]: The model trained on MSL dataset is too large. We are willing to upload it in the future.
+
+## Datasets
+You can download all datasets [here](https://drive.google.com/drive/folders/1RaIJQ8esoWuhyphhmMaH-VCDh-WIluRR?usp=sharing).
+(Thanks for [DCdetector](https://github.com/DAMO-DI-ML/KDD2023-DCdetector/blob/main/readme.md) repo and its authors.)
+
 
 ## Citation
 
