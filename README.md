@@ -31,6 +31,12 @@ https://drive.google.com/drive/folders/1dDH3JRivRYEU02riHzGFUu74OxiwDax6?usp=sha
 You can download all datasets [here](https://drive.google.com/drive/folders/1RaIJQ8esoWuhyphhmMaH-VCDh-WIluRR?usp=sharing).
 (Thanks for [DCdetector](https://github.com/DAMO-DI-ML/KDD2023-DCdetector/blob/main/readme.md) repo and its authors.)
 
+## Installation
+You can refer to requirements.txt to install all the packages.
+
+[^2]: **We have not tested it to make sure it can be installed successfully. We will test it in the future.**
+
+>pip install -r requirements.txt
 
 ## Citation
 
