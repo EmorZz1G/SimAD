@@ -42,7 +42,7 @@ You can refer to requirements.txt to install all the packages.
 
 **If you find this repo useful, please cite our paper or leave a star.**
 
-@misc{zhong2024simad,`<br>`
+@misc{zhong2024simad,
 &nbsp;&nbsp;&nbsp;&nbsp;title={SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection},
 &nbsp;&nbsp;&nbsp;&nbsp;author={anonymous authors},
 &nbsp;&nbsp;&nbsp;&nbsp;year={2024},
