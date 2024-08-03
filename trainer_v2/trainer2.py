@@ -141,12 +141,15 @@ class ContAD_Trainer(Trainer):
                 x_patch = rearrange(x,'b (l p) c -> b l (p c)', p=model.patch_size)
 
                 x_out, sim_score = model(x)
-                rec_loss = l2_loss(x_out, x_patch) + torch.mean(1 - cos_loss(x_out, x_patch))
+                # rec_loss = l2_loss(x_out, x_patch) + torch.mean(1 - cos_loss(x_out, x_patch))
+
+                rec_loss = l2_loss(x_out, x_patch) #+ torch.mean(1 - cos_loss(x_out, x_patch))
 
                 x2 = aug_noise(x, model.patch_size, self.config.noise_level)
                 x_out2, sim_score2 = model(x2)
                 x_patch2 = rearrange(x2,'b (l p) c -> b l (p c)', p=model.patch_size)
-                rec_loss2 = l2_loss(x_out2, x_patch) + torch.mean(1 - cos_loss(x_out2, x_patch))
+                # rec_loss2 = l2_loss(x_out2, x_patch) + torch.mean(1 - cos_loss(x_out2, x_patch))
+                rec_loss2 = l2_loss(x_out2, x_patch) #+ torch.mean(1 - cos_loss(x_out2, x_patch))
                 
 
                 warmup_steps = self.config.warmup_steps
@@ -157,11 +160,16 @@ class ContAD_Trainer(Trainer):
                 sim_score = F.normalize(sim_score, dim=-1)
                 sim_score2 = F.normalize(sim_score2, dim=-1)
 
-                sim_loss1 = l2_loss(sim_score, sim_score2.detach()) + torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
-                sim_loss2 = l2_loss(sim_score2, sim_score.detach()) + torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
+                # sim_loss1 = l2_loss(sim_score, sim_score2.detach()) + torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
+                # sim_loss2 = l2_loss(sim_score2, sim_score.detach()) + torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
 
+                # no joint
                 # sim_loss1 = l2_loss(sim_score, sim_score2) + torch.mean(1 - cos_loss(sim_score, sim_score2))
                 # sim_loss2 = l2_loss(sim_score2, sim_score) + torch.mean(1 - cos_loss(sim_score2, sim_score))
+
+                # no cos
+                sim_loss1 = l2_loss(sim_score, sim_score2.detach()) #+ torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
+                sim_loss2 = l2_loss(sim_score2, sim_score.detach()) #+ torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
                 
                 sim_loss = sim_loss1 + sim_loss2
 
