@@ -1,44 +1,65 @@
-# SimAD
+## 📑SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection
 
 This is the implementation of *SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection*
 
 The paper is under review. You can download the paper from [arXiv](https://arxiv.org/abs/2405.11238).
 
-# Abstract
+## 📰Abstract
 
-Despite the prevalence of reconstruction-based deep learning methods, time series anomaly detection remains a challenging task. Existing approaches often struggle with limited temporal contexts, inadequate representation of normal patterns, and flawed evaluation metrics, hindering their effectiveness in identifying aberrant behavior.
-To address these issues, we introduce **SimAD**, a **Sim**ple dissimilarity-based approach for time series **A**nomaly **D**etection. SimAD leverages a feature extractor capable of handling extended time windows, employs the EmbedPatch encoder to effectively integrate normal features, and introduces a novel ContrastFusion module to amplify distributional discrepancies between normal and anomalous data, thereby facilitating robust anomaly discrimination.
-Additionally, we propose two robust evaluation metrics, UAff and NAff, addressing the limitations of existing metrics and demonstrating their reliability through theoretical and experimental analyses.
-Experiments across **seven** diverse time series datasets demonstrate SimAD's superior performance compared to state-of-the-art methods, achieving relative improvements of **19.85%** on F1, **4.44%** on Aff-F1, **77.79%** on NAff-F1, and **9.69%** on AUC on six multivariate datasets.
+Despite the prevalence of reconstruction-based deep learning methods, time series anomaly detection remains a tremendous challenge.
+Existing approaches often struggle with limited temporal contexts, insufficient representation of normal patterns, and flawed evaluation metrics, all of which hinder their effectiveness in detecting anomalous behavior.
+To address these issues, we introduce a **Sim**ple dissimilarity-based approach for time series **A**nomaly **D**etection, referred to as **SimAD**. 
+Specifically, SimAD first incorporates a patching-based feature extractor capable of processing extended temporal windows and employs the EmbedPatch encoder to fully integrate normal behavioral patterns. 
+Second, we design an innovative ContrastFusion module in SimAD, which strengthens the robustness of anomaly detection by highlighting the distributional differences between normal and abnormal data.
+Third, we introduce two robust enhanced evaluation metrics, Unbiased Affiliation (UAff) and Normalized Affiliation (NAff), designed to overcome the limitations of existing metrics by providing better distinctiveness and semantic clarity.
+The reliability of these two metrics has been demonstrated by both theoretical and experimental analyses. Experiments conducted on seven diverse time series datasets clearly demonstrate SimAD's superior performance compared to state-of-the-art methods, achieving relative improvements of **19.85%** on F1, **4.44** on Aff-F1, **77.79** on NAff-F1, and **9.69** on AUC on six multivariate datasets.
 Code and pre-trained models are available at [https://github.com/EmorZz1G/SimAD](https://github.com/EmorZz1G/SimAD).
 
-## Architecture
+## 🛠Architecture
 
-![Architecture](./paper_img/fw.png)
+![Architecture](./paper_img/fw2.png)
 
-## Overall Performance
+## 📊Overall Performance
 
 <div style="display: flex; flex-wrap: nowrap;">
-  <img src="./paper_img/comparision.png" alt="Overall Performance" style="max-width: 300px; margin-right: 10px;" width=450px;>
+  <img src="./paper_img/comparison.png" alt="Overall Performance" style="max-width: 300px; margin-right: 10px;" width=450px;>
   <!-- <img src="./paper_img/mdlsz.png" alt="Model Size" style="max-width: 150px;" width=200px; > -->
 </div>
 
-## Model download link
+## 📎Model download link
 
 https://drive.google.com/drive/folders/1dDH3JRivRYEU02riHzGFUu74OxiwDax6?usp=sharing [^1]
 
-## Datasets
+## 💾Datasets
 
 You can download all datasets [here](https://drive.google.com/drive/folders/1RaIJQ8esoWuhyphhmMaH-VCDh-WIluRR?usp=sharing).
 (Thanks for [DCdetector](https://github.com/DAMO-DI-ML/KDD2023-DCdetector/blob/main/readme.md) repo and its authors.)
 
-## Installation
+## 🔧Installation
 
 You can refer to requirements.txt to install all the packages.
 
 > pip install -r requirements.txt
 
-## Citation
+## 🔧Quick Start
+
+1. You should download the datasets into ABSOLUTE/PATH/OF/DATASET.
+2. The dataset structure should be like 'dataset_struct.txt'
+3. Run the scripts below.
+4. Note that the most important is you should change the parameter of --data_pth.
+5. We use --save_pth and --logs_pth for model and result saving.
+6. --resume controls whether to reload the trained model.
+
+
+### Train
+
+`python main.py --data_name MSL --win_size 25600 --lr 0.0001 --gpu -1 --resume 0 --index 1 --batch_size 32 --step 1 --use_amp 0 --warmup_steps 20000 --warmup_max_ratio 0.2 --data_pth ABSOLUTE/PATH/OF/DATASET`
+
+### Inference
+
+`python main.py --data_name MSL --win_size 25600 --lr 0.0001 --gpu -1 --resume 1 --index 1 --batch_size 32 --step 1 --use_amp 0 --warmup_steps 20000 --warmup_max_ratio 0.2 --data_pth ABSOLUTE/PATH/OF/DATASET`
+
+## 📎 Citation
 
 **If you find this repo useful, please cite our paper or leave a star.**
 
@@ -51,7 +72,7 @@ You can refer to requirements.txt to install all the packages.
 &nbsp;&nbsp;&nbsp;&nbsp;primaryClass={cs.LG}
 }
 
-# Acknowledgement
+## 🥰Acknowledgement
 
 We appreciate the following github repos a lot for their valuable code:
 
