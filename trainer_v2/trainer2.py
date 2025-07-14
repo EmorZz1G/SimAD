@@ -160,16 +160,17 @@ class ContAD_Trainer(Trainer):
                 sim_score = F.normalize(sim_score, dim=-1)
                 sim_score2 = F.normalize(sim_score2, dim=-1)
 
-                # sim_loss1 = l2_loss(sim_score, sim_score2.detach()) + torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
-                # sim_loss2 = l2_loss(sim_score2, sim_score.detach()) + torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
+                # ours
+                sim_loss1 = l2_loss(sim_score, sim_score2.detach()) + torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
+                sim_loss2 = l2_loss(sim_score2, sim_score.detach()) + torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
 
                 # no joint
                 # sim_loss1 = l2_loss(sim_score, sim_score2) + torch.mean(1 - cos_loss(sim_score, sim_score2))
                 # sim_loss2 = l2_loss(sim_score2, sim_score) + torch.mean(1 - cos_loss(sim_score2, sim_score))
 
                 # no cos
-                sim_loss1 = l2_loss(sim_score, sim_score2.detach()) #+ torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
-                sim_loss2 = l2_loss(sim_score2, sim_score.detach()) #+ torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
+                # sim_loss1 = l2_loss(sim_score, sim_score2.detach()) #+ torch.mean(1 - cos_loss(sim_score, sim_score2.detach()))
+                # sim_loss2 = l2_loss(sim_score2, sim_score.detach()) #+ torch.mean(1 - cos_loss(sim_score2, sim_score.detach()))
                 
                 sim_loss = sim_loss1 + sim_loss2
 
