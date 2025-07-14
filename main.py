@@ -109,6 +109,7 @@ def get_arg_parser():
 
 
 from models_v2.model2_lazy import ContAD_wo_ci
+# from models_v2.model2_lazy_wo_query import ContAD_wo_ci
 from trainer_v2.trainer2 import ContAD_Trainer
 
 import torch

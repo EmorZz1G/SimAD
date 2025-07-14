@@ -458,6 +458,7 @@ class WADI_SegLoader(object):
         self.test_labels = np.load(data_path + "/WADI_test_label.npy")
         print("test:", self.test.shape)
         print("train:", self.train.shape)
+        print('anomaly:', np.sum(self.test_labels)/len(self.test_labels))
 
     def __len__(self):
         if self.mode == "train":
