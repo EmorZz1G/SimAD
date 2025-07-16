@@ -2,7 +2,7 @@
 
 This is the implementation of *SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection*
 
-The paper is under review. You can download the paper from [arXiv](https://arxiv.org/abs/2405.11238).
+The paper has been accepted by **TNNLS** and will appear in early access shortly. For now, the latest preprint (v2) is available on [arXiv](https://arxiv.org/abs/2405.11238). We added further experiments and analyses. Thank you for your interest!
 
 ## 📰Abstract
 
@@ -63,13 +63,14 @@ You can refer to requirements.txt to install all the packages.
 
 **If you find this repo useful, please cite our paper or leave a star.**
 
-@misc{zhong2024simad,<br>
+@misc{zhong2025simad,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;title={SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;author={anonymous authors},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;author={Zhijie Zhong and Zhiwen Yu and Xing Xi and Yue Xu and Wenming Cao and Yiyuan Yang and Kaixiang Yang and Jane You},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;year={2025},<br>
 &nbsp;&nbsp;&nbsp;&nbsp;eprint={2405.11238},<br>
 &nbsp;&nbsp;&nbsp;&nbsp;archivePrefix={arXiv},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;primaryClass={cs.LG}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;primaryClass={cs.LG},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;url={https://arxiv.org/abs/2405.11238},<br>
 }
 
 ## 🥰Acknowledgement
