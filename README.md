@@ -2,7 +2,9 @@
 
 This is the implementation of *SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection*
 
-The paper has been accepted by **TNNLS** and will appear in early access shortly. For now, the latest preprint (v2) is available on [arXiv](https://arxiv.org/abs/2405.11238). We added further experiments and analyses. Thank you for your interest!
+The paper has been accepted by **TNNLS 2025** and appear in [early access](https://ieeexplore.ieee.org/document/11099055/). For now, the latest preprint (v2) is available on [arXiv](https://arxiv.org/abs/2405.11238). We added further experiments and analyses. Thank you for your interest!
+
+If you have any questions, please feel free to contact me or raise an Issue.
 
 ## 📰Abstract
 
@@ -12,12 +14,12 @@ To address these issues, we introduce a **Sim**ple dissimilarity-based approach 
 Specifically, SimAD first incorporates a patching-based feature extractor capable of processing extended temporal windows and employs the EmbedPatch encoder to fully integrate normal behavioral patterns. 
 Second, we design an innovative ContrastFusion module in SimAD, which strengthens the robustness of anomaly detection by highlighting the distributional differences between normal and abnormal data.
 Third, we introduce two robust enhanced evaluation metrics, Unbiased Affiliation (UAff) and Normalized Affiliation (NAff), designed to overcome the limitations of existing metrics by providing better distinctiveness and semantic clarity.
-The reliability of these two metrics has been demonstrated by both theoretical and experimental analyses. Experiments conducted on seven diverse time series datasets clearly demonstrate SimAD's superior performance compared to state-of-the-art methods, achieving relative improvements of **19.85%** on F1, **4.44** on Aff-F1, **77.79** on NAff-F1, and **9.69** on AUC on six multivariate datasets.
+The reliability of these two metrics has been demonstrated by both theoretical and experimental analyses. Experiments conducted on seven diverse time series datasets clearly demonstrate SimAD's superior performance compared to state-of-the-art methods, achieving relative improvements of **19.85%** on F1, **4.44%** on Aff-F1, **77.79%** on NAff-F1, and **9.69%** on AUC on six multivariate datasets.
 Code and pre-trained models are available at [https://github.com/EmorZz1G/SimAD](https://github.com/EmorZz1G/SimAD).
 
 ## 🛠Architecture
 
-![Architecture](./paper_img/fw2.png)
+![Architecture](./paper_img/fw3.png)
 
 ## 📊Overall Performance
 
@@ -61,7 +63,24 @@ You can refer to requirements.txt to install all the packages.
 
 ## 📎 Citation
 
-**If you find this repo useful, please cite our paper or leave a star.**
+**If you find this repo useful, please cite our paper or leave a star. It's very important to me. Thank you for your support**
+
+
+> TNNLS version
+
+@ARTICLE{zhong2025simad,<br>
+  author={Zhong, Zhijie and Yu, Zhiwen and Xi, Xing and Xu, Yue and Cao, Wenming and Yang, Yiyuan and Yang, Kaixiang and You, Jane},<br>
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, <br>
+  title={SimAD: A Simple Dissimilarity-Based Approach for Time-Series Anomaly Detection}, <br>
+  year={2025},<br>
+  volume={},<br>
+  number={},<br>
+  pages={1-12},<br>
+  doi={10.1109/TNNLS.2025.3590220}}
+
+or
+
+> preprint version
 
 @misc{zhong2025simad,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;title={SimAD: A Simple Dissimilarity-based Approach for Time Series Anomaly Detection},<br>
@@ -72,6 +91,7 @@ You can refer to requirements.txt to install all the packages.
 &nbsp;&nbsp;&nbsp;&nbsp;primaryClass={cs.LG},<br>
 &nbsp;&nbsp;&nbsp;&nbsp;url={https://arxiv.org/abs/2405.11238},<br>
 }
+
 
 ## 🥰Acknowledgement
 
@@ -84,3 +104,9 @@ We appreciate the following github repos a lot for their valuable code:
 [^1]: The model trained on MSL dataset is too large. We are willing to upload it in the future.
     
 [^2]: **We have not tested it to make sure it can be installed successfully. We will test it in the future.**
+
+
+## TODO List
+1. add docs.
+2. add website.
+3. enhance our code's readability. 
