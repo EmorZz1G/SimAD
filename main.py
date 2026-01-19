@@ -1,13 +1,15 @@
 import argparse
 from utils.config_utils import setup_seed
 
-is_sbatch = 1
+is_sbatch = 0
 if is_sbatch:
+    # data_pth = r'/share/home/202220143416/time_series_data/dc_detector/'
     data_pth = r'/share/home/202220143416/time_series_data/dc_detector/'
     logs_pth = r'/share/home/202220143416/TF_AD_models_logs/logs/'
 else:
-    data_pth = r'/home/zzj/time_series_data2/DCdetector_dataset/'
-    logs_pth = r'/home/zzj/TF_AD_models_logs/logs/'
+    # data_pth = r'/home/zzj/time_series_data2/DCdetector_dataset/'
+    data_pth = r'/home/zzj/projects/FTSAD/datasets'
+    logs_pth = r'/home/zzj/projects/attn_ad/attn_ad/logs'
 
 
 def get_arg_parser():
